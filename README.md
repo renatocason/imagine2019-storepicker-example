@@ -19,4 +19,17 @@ For a better result, all store views should have different base Urls. This can b
 The links between country and store view can be edited, added and removed via the admin, under _Stores > Store Picker Locations_.
 
 ### GraphQL
-The frontend block is added to the main page content on the default layout handle, right before the footer.
+A GraphQL client can be pointed to the `/graphql` endpoint of your store, and you can query the extension's data - i.e.:
+
+```
+{
+  locations {
+    country_id
+    store_id
+    country {
+      full_name_english
+      full_name_locale
+    }
+  }
+}
+```
