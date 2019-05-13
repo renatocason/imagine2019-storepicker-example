@@ -1,0 +1,16 @@
+{
+    "name": "renatocason/imagine2019-storepicker-example",
+    "description": "Store Picker example for Imagine 2019",
+    "type": "magento2-module",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Rcason\\StorePicker\\": ""
+        }
+    }
+}

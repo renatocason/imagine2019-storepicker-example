@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Rcason\StorePicker\Api\Data\LocationInterface" type="Rcason\StorePicker\Model\Location" />
+    <preference for="Rcason\StorePicker\Api\Data\LocationSearchResultInterface" type="Rcason\StorePicker\Model\ResourceModel\Location\Collection" />
+    <preference for="Rcason\StorePicker\Api\LocationRepositoryInterface" type="Rcason\StorePicker\Model\LocationRepository" />
+    
+    <virtualType name="Rcason\StorePicker\Model\ResourceModel\Location\Collection\Grid" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">storepicker_location</argument>
+            <argument name="resourceModel" xsi:type="string">Rcason\StorePicker\Model\ResourceModel\Location</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="storepicker_locations_grid_data_source" xsi:type="string">Rcason\StorePicker\Model\ResourceModel\Location\Collection\Grid</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

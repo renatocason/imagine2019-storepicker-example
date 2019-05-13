@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="storepicker_location" resource="default" engine="innodb" comment="Store Picker Location Table">
+        <column xsi:type="varchar" name="country_id" length="2" nullable="false"
+                comment="Entity ID"/>
+        <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false"
+                default="0" comment="Store ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="country_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="STOREPICKER_LOCATION_STORE_ID_STORE_STORE_ID"
+            table="storepicker_location" column="store_id" referenceTable="store"
+            referenceColumn="store_id" onDelete="CASCADE"/>
+    </table>
+</schema>

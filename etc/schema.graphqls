@@ -1,0 +1,9 @@
+type Query {
+    locations: [Location] @resolver(class: "Rcason\\StorePicker\\Model\\Resolver\\Locations") @doc(description: "The locations query provides information for all supported countries and the related stores.")
+}
+
+type Location {
+    country_id: String
+    store_id: String
+    country: Country
+}

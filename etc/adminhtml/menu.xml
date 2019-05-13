@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Rcason_StorePicker::locations" title="Store Picker Locations" translate="title"
+            module="Rcason_StorePicker" sortOrder="100" parent="Magento_Backend::other_settings"
+            action="storepicker/locations" resource="Rcason_StorePicker::locations" />
+    </menu>
+</config>
